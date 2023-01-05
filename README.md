@@ -6,7 +6,7 @@ Source code for
 ![cnn_lstm_rand_dense_noresm2_comparison](/figures/cnn_lstm_rand_dense_noresm2_comparison.png)
 
 ## Access the Data
-In this work, we make use of the publicly available CliamteBench dataset. See
+We make use of the publicly available CliamteBench dataset. See
 > Watson-Parris, D., Rao, Y., Olivié, D., Seland, Ø., Nowack, P., Camps-Valls, G., et al. (2022). ClimateBench v1.0: A benchmark for data-driven climate projections. Journal of Advances in Modeling Earth Systems, 14, e2021MS002954. https://doi.org/10.1029/2021MS002954
 
 The ClimateBench repository can be found here: https://github.com/duncanwp/ClimateBench
