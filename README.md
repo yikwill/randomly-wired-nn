@@ -7,6 +7,7 @@ Source code for
 
 The code to generate the randomly wired neural networks is adapted from
 > Geiss, A., Ma, P. L., Singh, B., & Hardin, J. C. (2022). Emulating Aerosol Optics with Randomly Generated Neural Networks. EGUsphere [preprint]. https://doi.org/10.5194/egusphere-2022-559
+
 The original repository for which can be found here: https://github.com/avgeiss/aerosol_optics_ml
 
 ## Access the Data
