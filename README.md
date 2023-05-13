@@ -1,12 +1,12 @@
 # Exploring Randomly Wired Neural Networks for Climate Model Emulation
  
 Source code for
-> Yik, W., Silva, S. J., Geiss, A., Watson-Parris, D. (Submitted). Exploring Randomly Wired Neural Networks for Climate Model Emulation. *Artificial Intelligence for the Earth Systems*. https://arxiv.org/abs/2212.03369
+> Yik, W., Silva, S. J., Geiss, A., Watson-Parris, D. (Under Review). Exploring Randomly Wired Neural Networks for Climate Model Emulation. *Artificial Intelligence for the Earth Systems*. https://arxiv.org/abs/2212.03369
 
 ![cnn_lstm_rand_dense_noresm2_comparison](/figures/cnn_lstm_rand_dense_noresm2_comparison.png)
 
 The code to generate the randomly wired neural networks is adapted from
-> Geiss, A., Ma, P. L., Singh, B., & Hardin, J. C. (2022). Emulating Aerosol Optics with Randomly Generated Neural Networks. EGUsphere [preprint]. https://doi.org/10.5194/egusphere-2022-559
+> Geiss, A., Ma, P.-L., Singh, B., and Hardin, J. C.: Emulating aerosol optics with randomly generated neural networks, Geosci. Model Dev., 16, 2355–2370, https://doi.org/10.5194/gmd-16-2355-2023, 2023.
 
 The original repository for which can be found here: https://github.com/avgeiss/aerosol_optics_ml
 
