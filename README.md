@@ -1,7 +1,7 @@
 # Exploring Randomly Wired Neural Networks for Climate Model Emulation
  
 Source code for
-> Yik, W., Silva, S. J., Geiss, A., Watson-Parris, D. (Under Review). Exploring Randomly Wired Neural Networks for Climate Model Emulation. *Artificial Intelligence for the Earth Systems*. https://arxiv.org/abs/2212.03369
+> Yik, W., Silva, S. J., Geiss, A., Watson-Parris, D. (Accepted). Exploring Randomly Wired Neural Networks for Climate Model Emulation. *Artificial Intelligence for the Earth Systems*. https://doi.org/10.1175/AIES-D-22-0088.1
 
 ![cnn_lstm_rand_dense_noresm2_comparison](/figures/cnn_lstm_rand_dense_noresm2_comparison.png)
 
