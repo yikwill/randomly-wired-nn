@@ -1,6 +1,6 @@
 #
-#Andrew Geiss, Feb 15th 2022
-#Edited by William Yik
+# Andrew Geiss, Feb 15th 2022
+# Edited by William Yik
 #
 import numpy as np
 import tensorflow as tf

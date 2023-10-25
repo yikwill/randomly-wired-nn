@@ -1,3 +1,4 @@
+# Based on code from ClimateBench (Watson-Parris et al.)
 import numpy as np
 import pandas as pd
 import xarray as xr

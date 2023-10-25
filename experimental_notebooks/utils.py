@@ -6,6 +6,48 @@ from eofs.xarray import Eof
 data_path = './drive/My Drive/Colab Notebooks/USC Random NN/data/train_val/'
 results_path = './drive/My Drive/Colab Notebooks/USC Random NN/experimental_results/'
 
+def get_rmse(truth, pred):
+    weights = np.cos(np.deg2rad(truth.lat))
+    return np.sqrt(((truth - pred)**2).weighted(weights).mean(['lat', 'lon'])).data
+    
+def get_rmse_spatial(truth, pred):
+  weights = np.cos(np.deg2rad(truth.lat))
+
+  numerator = np.sqrt(((pred.mean(['time'])-truth.mean(['time']))**2).weighted(weights).mean(['lat','lon']))
+  denominator = np.abs(truth.weighted(weights).mean(['lat','lon','time']))
+
+  return float((numerator/denominator).data)
+
+def get_rmse_global(truth, pred):
+  weights = np.cos(np.deg2rad(truth.lat))
+
+  numerator = np.sqrt(((pred.weighted(weights).mean(['lat','lon'])-truth.weighted(weights).mean(['lat','lon']))**2).mean(['time']))
+  denominator = np.abs(truth.weighted(weights).mean(['lat','lon','time']))
+
+  return float((numerator/denominator).data)
+  
+def count_ffnn_params(layer_counts):
+  count = 0
+  for i in range(len(layer_counts)-1):
+    count += layer_counts[i]*layer_counts[i+1]
+  count += sum(layer_counts[1:])
+  return count
+
+def plot_loss(history):
+  plt.figure()
+  plt.plot(history.history['loss'], label='loss')
+  plt.plot(history.history['val_loss'], label='val_loss')
+  plt.locator_params(axis='x', integer=True, tight=True)
+  plt.autoscale()
+  plt.xlabel('Epoch')
+  plt.ylabel('Error')
+  plt.legend()
+  plt.grid(True)
+  plt.tight_layout()
+  plt.show()
+
+# All code below was provided by Duncan Watson-Parris et al.
+# https://github.com/duncanwp/ClimateBench  
 min_co2 = 0.
 max_co2 = 9500
 def normalize_co2(data):
@@ -106,43 +148,3 @@ def create_predictdand_data(data_sets, sort_by_time=False):
     Y["pr"] *= 86400
     Y["pr90"] *= 86400
     return Y
-
-def get_rmse(truth, pred):
-    weights = np.cos(np.deg2rad(truth.lat))
-    return np.sqrt(((truth - pred)**2).weighted(weights).mean(['lat', 'lon'])).data
-    
-def get_rmse_spatial(truth, pred):
-  weights = np.cos(np.deg2rad(truth.lat))
-
-  numerator = np.sqrt(((pred.mean(['time'])-truth.mean(['time']))**2).weighted(weights).mean(['lat','lon']))
-  denominator = np.abs(truth.weighted(weights).mean(['lat','lon','time']))
-
-  return float((numerator/denominator).data)
-
-def get_rmse_global(truth, pred):
-  weights = np.cos(np.deg2rad(truth.lat))
-
-  numerator = np.sqrt(((pred.weighted(weights).mean(['lat','lon'])-truth.weighted(weights).mean(['lat','lon']))**2).mean(['time']))
-  denominator = np.abs(truth.weighted(weights).mean(['lat','lon','time']))
-
-  return float((numerator/denominator).data)
-  
-def count_ffnn_params(layer_counts):
-  count = 0
-  for i in range(len(layer_counts)-1):
-    count += layer_counts[i]*layer_counts[i+1]
-  count += sum(layer_counts[1:])
-  return count
-
-def plot_loss(history):
-  plt.figure()
-  plt.plot(history.history['loss'], label='loss')
-  plt.plot(history.history['val_loss'], label='val_loss')
-  plt.locator_params(axis='x', integer=True, tight=True)
-  plt.autoscale()
-  plt.xlabel('Epoch')
-  plt.ylabel('Error')
-  plt.legend()
-  plt.grid(True)
-  plt.tight_layout()
-  plt.show()

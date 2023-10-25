@@ -1,6 +1,7 @@
 #
-#Andrew Geiss, Feb 15th 2022
-#Edited by William Yik
+# William Yik
+# Based on code from Andrew Geiss
+# https://github.com/avgeiss/aerosol_optics_ml
 #
 import numpy as np
 import tensorflow as tf
